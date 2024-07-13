@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Arjan Molenaar
+#
+# SPDX-License-Identifier: Apache-2.0
+
 project('meson-python-pdm-example', 'c',
   version : '0.1',
   meson_version : '>= 1.1',
