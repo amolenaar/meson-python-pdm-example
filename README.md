@@ -35,11 +35,13 @@ PDM can be used to install all requirements needed for building and testing. PDM
 
 NB. Run this in a clean venv, not the one created for Meson previously.
 
+Currently, you first have to make sure the build dependencies are installed. This is done
+by installing all dependencies, but the project itself. Secondly our project can be installed.
+
 ```bash
+pdm install --no-self
 pdm install
 pdm run pytest
 ```
 
 This is a simple flow, and familiar to anyone who's ever user Poetry.
-
-

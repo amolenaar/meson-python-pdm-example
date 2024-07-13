@@ -11,10 +11,17 @@ dynamic = ["version"]
 dependencies = []
 
 [tool.pdm.dev-dependencies]
+build = [
+    "meson-python>=0.16.0",
+    "ninja>=1.8.2"
+]
 test = [
     "pytest",
 ]
 
+[tool.pdm.options]
+install = ["--no-isolation"]
+
 [build-system]
 build-backend = "mesonpy"
-requires = ["meson-python>=0.12.1"]
+requires = ["meson-python>=0.16.0"]
