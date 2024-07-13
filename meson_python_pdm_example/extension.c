@@ -6,10 +6,6 @@
 
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
-#include <stdio.h>
-
-#define PROJECT_NAME "meson-python-pdm-example"
-
 
 PyObject*
 hello (void)
@@ -23,7 +19,7 @@ static PyMethodDef functions[] = {
 
 static struct PyModuleDef module = {
     PyModuleDef_HEAD_INIT,
-    "_extension",
+    "extension",
     NULL,
     0,
     functions,
@@ -34,6 +30,6 @@ static struct PyModuleDef module = {
 };
 
 PyMODINIT_FUNC
-PyInit__extension(void) {
+PyInit_extension(void) {
     return PyModuleDef_Init(&module);
 }

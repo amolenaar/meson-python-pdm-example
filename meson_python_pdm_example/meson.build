@@ -11,7 +11,7 @@ python.install_sources(
 )
 
 extension = python.extension_module(
-  '_extension',
+  'extension',
   sources: ['extension.c'],
   dependencies: [python_dep],
   install: true,
