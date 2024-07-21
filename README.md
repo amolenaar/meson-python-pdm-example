@@ -16,30 +16,9 @@ PDM is a package and dependency manager. If you're used to tools like Poetry and
 managing your project with pip.
 Meson-Python is the glue that makes Meson usable from a Python ecosystem.
 
-
-## Meson-style
-
-The classic approach with Meson is to create a virtual environment and use meson to build and test:
-
-```bash
-python -m venv .meson-venv
-source .meson-venv/bin/activate
-pip install pytest
-meson setup _build
-meson test -C _build
-```
-
-## PDM
-
 PDM can be used to install all requirements needed for building and testing. PDM will make virtual environment and install all dependencies there.
 
-NB. Run this in a clean venv, not the one created for Meson previously.
-
-Currently, you first have to make sure the build dependencies are installed. This is done
-by installing all dependencies, but the project itself. Secondly our project can be installed.
-
 ```bash
-pdm install --no-self
 pdm install
 pdm run pytest
 ```
