@@ -12,6 +12,7 @@ dependencies = []
 
 [tool.pdm.dev-dependencies]
 build = [
+    "setuptools",
     "meson-python>=0.16.0",
     "ninja>=1.8.2"
 ]
