@@ -1,0 +1,31 @@
+name: build
+
+on:
+  push:
+
+env:
+  python-version: '3.12'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - name: Set up Python ${{ env.python-version }}
+        uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5.1.0
+        with:
+          python-version: ${{ env.python-version }}
+          allow-prereleases: true
+      - name: Install PDM
+        run: python${{ env.python-version }} -m pip install pdm
+      - name: Install dependencies
+        run: python${{ env.python-version }} -m pdm install
+      - name: Test
+        run: python${{ env.python-version }} -m pdm run pytest
