@@ -6,6 +6,8 @@ SPDX-License-Identifier: Apache-2.0
 
 # Meson + Python + PDM
 
+[![build](https://github.com/amolenaar/meson-python-pdm-example/actions/workflows/build.yml/badge.svg)](https://github.com/amolenaar/meson-python-pdm-example/actions/workflows/build.yml)
+
 This is a small example project that shows you how you can set up
 [Meson](https://mesonbuild.com/) and
 [Meson-Python](https://meson-python.readthedocs.io) with
